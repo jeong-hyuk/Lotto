@@ -38,7 +38,7 @@
         android:layout_toRightOf="@id/imageView"
         android:gravity="center"
         android:textSize="36sp"
-        android:text="전갈 자리" />
+        android:text="쌍둥이 자리" />
 
     <DatePicker
         android:id="@+id/datePicker"

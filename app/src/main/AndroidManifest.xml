@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lotto">
         <activity android:name=".ResultActivity"></activity>
-        <activity android:name=".NameActivity" />
         <activity android:name=".ConstellationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

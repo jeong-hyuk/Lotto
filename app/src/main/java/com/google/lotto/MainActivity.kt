@@ -5,6 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
 
+fun getShuffledLottoNumbers () : MutableList<Int>{
+    var list = mutableListOf<Int>()
+
+    for(number in 1..45){
+        list.add(number)
+    }
+    list.shuffle()
+
+    return list.subList(0, 6)
+}
 
 
 class MainActivity : AppCompatActivity() {

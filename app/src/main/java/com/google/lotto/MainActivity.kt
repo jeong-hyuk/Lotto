@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
 
+
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         val cardRandom = findViewById<CardView>(R.id.cardRandom)
         cardRandom.setOnClickListener {
             val intent = Intent(this, ResultActivity::class.java)
+             intent.putIntegerArrayListExtra("result", ArrayList(getRandomLottoNumbers()))
             startActivity(intent)
         }
         val cardConstell = findViewById<CardView>(R.id.cardConstell)
@@ -23,5 +26,35 @@ class MainActivity : AppCompatActivity() {
         cardName.setOnClickListener {
             startActivity(Intent(this, NameActivity::class.java))
         }
+    }
+
+
+
+    fun getRandomLottoNumber():Int{
+        return java.util.Random().nextInt(45)+1
+    }
+    fun getRandomLottoNumbers(): MutableList<Int>{
+        val lottoNumbers = mutableListOf<Int>()
+
+    while(true){
+        var number:Int = getRandomLottoNumber()
+       // var flag_existing: Int = 0
+      //  for(j in 0..lottoNumbers.size){
+        if(lottoNumbers.contains(number)){
+    //        if(number.equals(lottoNumbers[j])){
+    //            flag_existing =1
+             //   break;
+            continue
+
+        }
+//        if(flag_existing.equals(1))
+//            continue
+//        else
+            lottoNumbers.add(number)
+        if(lottoNumbers.size >= 6)
+            break;
+    }
+        return lottoNumbers
+
     }
 }

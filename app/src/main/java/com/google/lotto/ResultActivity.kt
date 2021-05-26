@@ -9,7 +9,7 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        val result = intent.getIntArrayExtra("result")
+        val result = intent.getIntegerArrayListExtra("result")?:return
 //        if(result == null) {
 //            return
 //        }
@@ -19,9 +19,13 @@ class ResultActivity : AppCompatActivity() {
 //        println("result sorted is $result")
 //
 //         val result_sorted = result.sortedBy { it }
-          val result_sorted = result?.sorted()
+//          val result_sorted = result?.sorted()
 //        println("result_sorted is " + result_sorted)
+        updateLottoBallImages(result.sortedBy { it })
 
+        }
+
+    private fun updateLottoBallImages(result_sorted : List<Int>) {
         val lottoBallImageStartId = R.drawable.ball_01
 //        val LottoBallImageId2 = R.drawable.ball_02
 //        val LottoBallImageId3 = R.drawable.ball_03
@@ -32,11 +36,12 @@ class ResultActivity : AppCompatActivity() {
         val imageView8 = findViewById<ImageView>(R.id.imageView8)
         val imageView9 = findViewById<ImageView>(R.id.imageView9)
 
-        imageView2.setImageResource(lottoBallImageStartId + result_sorted!![0]-1)
-        imageView3.setImageResource(lottoBallImageStartId + result_sorted[1]-1)
-        imageView4.setImageResource(lottoBallImageStartId + result_sorted[2]-1)
-        imageView6.setImageResource(lottoBallImageStartId + result_sorted[3]-1)
-        imageView8.setImageResource(lottoBallImageStartId + result_sorted[4]-1)
-        imageView9.setImageResource(lottoBallImageStartId + result_sorted[5]-1)
+        imageView2.setImageResource(lottoBallImageStartId + result_sorted!![0] - 1)
+        imageView3.setImageResource(lottoBallImageStartId + result_sorted[1] - 1)
+        imageView4.setImageResource(lottoBallImageStartId + result_sorted[2] - 1)
+        imageView6.setImageResource(lottoBallImageStartId + result_sorted[3] - 1)
+        imageView8.setImageResource(lottoBallImageStartId + result_sorted[4] - 1)
+        imageView9.setImageResource(lottoBallImageStartId + result_sorted[5] - 1)
+
     }
 }

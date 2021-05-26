@@ -9,13 +9,13 @@ class NameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_name)
-        val button = findViewById<Button>(R.id.button)
-        val button2 = findViewById<Button>(R.id.button2)
+        val btnGoResultName = findViewById<Button>(R.id.btnGoResultName)
+        val btnBack = findViewById<Button>(R.id.btnBack)
 
-        button.setOnClickListener {
+        btnGoResultName.setOnClickListener {
             startActivity(Intent(this@NameActivity, ConstellationActivity::class.java))
         }
-        button2.setOnClickListener {
+        btnBack.setOnClickListener {
             startActivity(Intent(this@NameActivity, ConstellationActivity::class.java))
         }
     }

@@ -3,6 +3,9 @@ package com.google.lotto
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +26,11 @@ class ResultActivity : AppCompatActivity() {
 //        println("result_sorted is " + result_sorted)
         updateLottoBallImages(result.sortedBy { it })
 
+//        strConstellation?.let{
+//            val resultLabel = findViewById<TextView>(R.id.resultLable)
+//            resultLabel.text =
+//                    "${strConstellation}의 ${SimpleDateFormat("yyyy년 MM월 dd일").Format(Date())}로또 번호입니다"
+//        }
         }
 
     private fun updateLottoBallImages(result_sorted : List<Int>) {
